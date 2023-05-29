@@ -1,0 +1,15 @@
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\bin\Debug\net7.0\Alternative Language Project.exe
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\bin\Debug\net7.0\Alternative Language Project.deps.json
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\bin\Debug\net7.0\Alternative Language Project.runtimeconfig.json
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\bin\Debug\net7.0\Alternative Language Project.dll
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\bin\Debug\net7.0\Alternative Language Project.pdb
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\obj\Debug\net7.0\Alternative Language Project.csproj.AssemblyReference.cache
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\obj\Debug\net7.0\Alternative Language Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\obj\Debug\net7.0\Alternative Language Project.AssemblyInfoInputs.cache
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\obj\Debug\net7.0\Alternative Language Project.AssemblyInfo.cs
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\obj\Debug\net7.0\Alternative Language Project.csproj.CoreCompileInputs.cache
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\obj\Debug\net7.0\Alternative Language Project.dll
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\obj\Debug\net7.0\refint\Alternative Language Project.dll
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\obj\Debug\net7.0\Alternative Language Project.pdb
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\obj\Debug\net7.0\Alternative Language Project.genruntimeconfig.cache
+C:\Users\derre\.vscode\github-workspace\CSB340\Alternative Language Project\obj\Debug\net7.0\ref\Alternative Language Project.dll

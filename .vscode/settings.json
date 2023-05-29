@@ -1,0 +1,5 @@
+{
+    "jupyter.interactiveWindow.codeLens.enable": false,
+    "csharp.referencesCodeLens.enabled": false,
+    "csharp.testsCodeLens.enabled": true
+}
