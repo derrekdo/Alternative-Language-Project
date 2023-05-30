@@ -1,5 +1,5 @@
 namespace Alternative_Language_Project {
-    class cell {
+    class Cell {
         private string? oem;
         private string? model;
         private int? launch_announced;
@@ -12,8 +12,48 @@ namespace Alternative_Language_Project {
         private string? display_resolution;
         private string? features_sensors;
         private string? platform_os;
+        
+        private string[]? fields;
 
-        public cell(){
+        public Cell(string[]? fields) {
+            this.fields = fields;
+            string? data;
+            for(int i = 0; i < fields.Length; i++) {
+                if (string.IsNullOrEmpty(fields[i]) || fields[i] == "-") {
+                    data = null;
+                }
+                data = fields[i];
+                checkType(i, data);
+            }
+        }
+
+        private void checkType(int i, string data) {
+            switch(i) {
+                case 0 :  setOem(data);
+                          break;
+                case 1 :  setModel(data);
+                          break;
+                // case 2 : setLaunchAnnounce(data);
+                //          break;
+                // case 3 :  setLaunch_status(data);
+                //           break;
+                case 4 :  setBody_dimensions(data);
+                          break;
+                // case 5 : setBody_weight(data);
+                //          break;
+                // case 6 :  setBody_sim(data);
+                //           break; add extra check for "No" "Yes"
+                case 7 :  setDisplay_type(data);
+                          break;
+                // case 8 : setDisplay_size(data);
+                //          break;
+                case 9 :  setDisplay_resolution(data);
+                          break;
+                case 10 : setFeatures_sensors(data);
+                          break;
+                // case 11 : setPlatform_os(data);
+                //           break;
+            }
 
         }
         

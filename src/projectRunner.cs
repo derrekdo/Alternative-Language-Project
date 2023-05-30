@@ -1,21 +1,14 @@
-﻿namespace Alternative_Language_Project {
-    public class projectRunner {
+﻿using Microsoft.VisualBasic.FileIO;
+
+namespace Alternative_Language_Project {
+
+    public class ProjectRunner {
+
         static void Main(string[] args) {
-            // string file = Path.Combine(Directory.GetFiles("InputFile"));
-            // StreamReader reader = null;
-            // if (File.Exists(file)) {
-            //     reader = new StreamReader(File.OpenRead(file));
-            //     Console.WriteLine(reader);
-                // while (!reader.EndOfStream) {
-                    // var line = reader.ReadLine();
-                    // var values = line.Split(',');
-                    // foreach(var item in values) {
-                    //     Console.Write(item + ", ");
-                    // }
-                    // Console.WriteLine();
-                // }
-            // }
-            // Console.ReadKey();
+            string file = Path.Combine(Directory.GetFiles("InputFile"));
+            
+            Database phoneDatabase = new Database(file);
+            phoneDatabase.createDatabase();
         }
     }
 }
