@@ -16,19 +16,20 @@ namespace Alternative_Language_Project {
             parser.HasFieldsEnclosedInQuotes = true;
             parser.SetDelimiters(",");
             string[]? fields;
-            //skips column titles
+            //skips first row ( column titles)
             fields = parser.ReadFields();
             int phoneID = 0;
             while(!parser.EndOfData) {
+            // for(int i = 0; i < 30; i++) {
+                //saves all data from current row, into array 
                 fields = parser.ReadFields();
-                // database.Add(phoneID, new Cell(fields));
-                // phoneID++;
-                // foreach(string field in fields){
-                //     Console.WriteLine(field);
-                // }
-                Console.WriteLine(fields.Length + ", " + phoneID);
+                //creates new phone object with obtained data and adds to database
+                database.Add(phoneID, new Cell(fields));
+                
                 phoneID++;
+ 
             }
+            
             parser.Close();
             Console.ReadKey();
         }
