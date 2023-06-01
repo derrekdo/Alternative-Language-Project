@@ -8,17 +8,19 @@ namespace Alternative_Language_Project {
         static void Main(string[] args) {
             string file = Path.Combine(Directory.GetFiles("InputFile"));
             
-            // Database phoneDatabase = new Database(file);
-            // phoneDatabase.createDatabase();
-        
+            Database phoneDatabase = new Database(file);
+            phoneDatabase.createDatabase();
+            // phoneDatabase.addPhone();
+            Console.WriteLine(phoneDatabase.getPhone(0));
           
+            
 
 
-            string pattern = @"[0-9]{1-3}\sg)";
-            string input = "45 g (3G)/ 115 g (LTE) (4.06 oz)";
+            // string pattern = @"[0-9]{1-3}\sg)";
+            // string input = "45 g (3G)/ 115 g (LTE) (4.06 oz)";
             
             
-            Console.Write(MatchFound);
+            // Console.Write(MatchFound);
             // String[] arr = input.Split('g');
             // foreach (string c in arr) {
             //     Console.WriteLine(c);

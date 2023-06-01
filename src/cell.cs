@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using System.Text;
 
 namespace Alternative_Language_Project {
     class Cell {
@@ -21,19 +22,18 @@ namespace Alternative_Language_Project {
             this.fields = fields;
             string? data;
             //moves through each column and saves that data
-            for(int i = 0; i < 4; i++) {
-                // Console.WriteLine(fields[i]);
-                
+            for(int i = 0; i < 12; i++) {
+                // Console.WriteLine(i);
                 //if it contains an empty string or '-' dat field set to null
                 if (string.IsNullOrEmpty(fields[i]) || fields[i] == "-") {
                     data = null;
+                } else {
+                    //the current data being saved
+                    data = fields[i];
                 }
 
-                //the current data being saved
-                data = fields[i];
                 //determines which data type it is
                 checkType(i, data);
-                // Console.WriteLine(launch_announced);
             }
         }
 
@@ -49,39 +49,43 @@ namespace Alternative_Language_Project {
                           break;
                 case 4 :  setBody_dimensions(data);
                           break;
-                // case 5 : setBody_weight(data);
-                //          break;
-                // case 6 :  setBody_sim(data);
-                //           break; add extra check for "No" "Yes"
+                case 5 :  regexBodyWeight(data);
+                          break;
+                case 6 :  regexBodySim(data);
+                          break;
                 case 7 :  setDisplay_type(data);
                           break;
-                // case 8 : setDisplay_size(data);
-                //          break;
+                case 8 :  regexDisplaySize(data);
+                          break;
                 case 9 :  setDisplay_resolution(data);
                           break;
                 case 10 : setFeatures_sensors(data);
                           break;
-                // case 11 : setPlatform_os(data);
-                //           break;
+                case 11 : regexPlatformOS(data);
+                          break;
             }
 
         }
         
-        public void regexLaunchAnnounce(string data) {
-            string[] arr = data.Split(new char [] {'.', ',', ' '});
-            string pattern = @"^[1-2]{1}[0-9]";
-            foreach (string s in arr) {
-                if (Regex.IsMatch(s, pattern)) {
-                    setLaunch_announced(Convert.ToInt32(s));
-                    break;
-                } else if (s == "V1") {
-                    setLaunch_announced(null);
+        private void regexLaunchAnnounce(string data) {
+            if (data == null) {
+                setLaunch_announced(null);
+            } else {
+                string[] arr = data.Split(new char [] {'.', ',', ' '});
+                string pattern = @"^[1-2]{1}[0-9]";
+                foreach (string s in arr) {
+                    if (Regex.IsMatch(s, pattern)) {
+                        setLaunch_announced(Convert.ToInt32(s));
+                        break;
+                    } else if (s == "V1" || s == null) {
+                        setLaunch_announced(null);
+                    }
                 }
             }
         }
 
-        public void regexLaunchStatus(string data) {
-            if (data == "Cancelled" || data == "Discontinued") {
+        private void regexLaunchStatus(string data) {
+            if (data == "Cancelled" || data == "Discontinued" || data == null) {
                 setLaunch_status(data);
             } else { 
                 string pattern = @"^[1-2]{1}";
@@ -96,8 +100,53 @@ namespace Alternative_Language_Project {
             }
         }
 
-        public void regexBodyWeight(string data) {
-            
+        private void regexBodyWeight(string data) {
+            if (data == null) {
+                setBody_weight(null);
+            } else {
+                string[] arr = data.Split(new char [] {',', ' '});
+                string pattern = @"^[1-9]{1}";
+                
+                foreach(string s in arr) {
+                    if (Regex.IsMatch(s, pattern)) {
+                        setBody_weight(float.Parse(s));
+                        break;
+                    }
+                }
+            } 
+        }
+
+        private void regexBodySim(string data) {
+            if (data == null || data == "Yes" || data == "No") {
+                setBody_sim(null);
+            } else {
+                setBody_sim(data);
+            }
+        }
+
+        private void regexDisplaySize(string data) {
+            // Console.WriteLine("HERES");
+            if (data == null) {
+                setDisplay_size(null);
+            } else {
+                string[] arr = data.Split(' ');
+                string pattern = @"^[1-9]{1}";
+                foreach(string s in arr) {
+                    if (Regex.IsMatch(s, pattern)) {
+                        setDisplay_size(float.Parse(s));
+                        break;
+                    }
+                }
+            }
+        }
+        
+        private void regexPlatformOS(string data) {
+            if (data == null) {
+                setPlatform_os(null);
+            } else {
+                string[] arr = data.Split(',');
+                setPlatform_os(arr[0]);
+            }
         }
 
         public void setOem(string? oem) {
@@ -128,7 +177,7 @@ namespace Alternative_Language_Project {
             this.body_sim = body_sim;
         }
 
-        public void setDisplay_type(string? display_type) {
+        public void setDisplay_type(string? display_type) {       
             this.display_type = display_type;
         }
 
