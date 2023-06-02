@@ -37,6 +37,7 @@ namespace Alternative_Language_Project {
             }
         }
 
+        
         private void checkType(int i, string data) {
             switch(i) {
                 case 0 :  setOem(data);

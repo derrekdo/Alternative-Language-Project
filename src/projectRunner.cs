@@ -4,34 +4,22 @@ using System.Text.RegularExpressions;
 namespace Alternative_Language_Project {
 
     public class ProjectRunner {
-
         static void Main(string[] args) {
             string file = Path.Combine(Directory.GetFiles("InputFile"));
             
             Database phoneDatabase = new Database(file);
             phoneDatabase.createDatabase();
-            // phoneDatabase.addPhone();
-            Console.WriteLine(phoneDatabase.getPhone(0));
           
-            
+            string[] newPhone = {"Google", "Pixel", "2019", "Cancelled", "156.1 x 73.9 x 8.3 mm (6.15 x 2.91 x 0.33 in)", 
+                        "188 g (6.63 oz)", "Dual SIM (dual stand-by)", "TFT resistive touchscreen, 256K colors", 
+                        "5.6 inches, 79.6 cm (~75.0% screen-to-body ratio)", "1080 x 2220 pixels, 18.5:9 ratio (~441 ppi density)",
+                        "Fingerprint (side-mounted), accelerometer, gyro, proximity, compass", "Android 9.0 (Pie), upgradable to Android 10"};
 
 
-            // string pattern = @"[0-9]{1-3}\sg)";
-            // string input = "45 g (3G)/ 115 g (LTE) (4.06 oz)";
             
-            
-            // Console.Write(MatchFound);
-            // String[] arr = input.Split('g');
-            // foreach (string c in arr) {
-            //     Console.WriteLine(c);
-            // }
-            // string year = arr[0];
-            // if (year.Length == 4 && Regex.IsMatch(year, pattern)) {
-            //     Console.WriteLine("yes");
-            // } else {
-            //     Console.Write("no");
-            // }
             Console.ReadKey();
         }
+
+        static void 
     }
 }
