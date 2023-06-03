@@ -24,7 +24,9 @@ namespace Alternative_Language_Project {
             Console.WriteLine(phoneDatabase.getPhone(1000));
 
             phoneDatabase.diffReleasedYear();
+            Console.WriteLine();
             phoneDatabase.phoneOneSensor();
+            Console.WriteLine();
             phoneDatabase.mostLaunchYear();
             Console.ReadKey();
         }
