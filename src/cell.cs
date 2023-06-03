@@ -37,7 +37,8 @@ namespace Alternative_Language_Project {
             }
         }
 
-        
+        //switch statments that determine which data goes wehre bases on postion in array
+        //depending on data type it will go throgh regex algorithm before being saved
         private void checkType(int i, string data) {
             switch(i) {
                 case 0 :  setOem(data);
@@ -68,6 +69,12 @@ namespace Alternative_Language_Project {
 
         }
         
+        //*FOR ALL REGEX METHODS*
+        //filters out the wanted data from given string
+        //checks for null values or invalid inputs
+        //if none splits the string into smaller parts
+        //checks if the each part matches the pattern or required data
+        //if it does, save it end the algorirhtm
         private void regexLaunchAnnounce(string data) {
             if (data == null) {
                 setLaunch_announced(null);
@@ -126,7 +133,6 @@ namespace Alternative_Language_Project {
         }
 
         private void regexDisplaySize(string data) {
-            // Console.WriteLine("HERES");
             if (data == null) {
                 setDisplay_size(null);
             } else {

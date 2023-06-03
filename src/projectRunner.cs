@@ -15,11 +15,18 @@ namespace Alternative_Language_Project {
                         "5.6 inches, 79.6 cm (~75.0% screen-to-body ratio)", "1080 x 2220 pixels, 18.5:9 ratio (~441 ppi density)",
                         "Fingerprint (side-mounted), accelerometer, gyro, proximity, compass", "Android 9.0 (Pie), upgradable to Android 10"};
 
+            phoneDatabase.mostCommonSensors();
+            phoneDatabase.mostCommonOem();
+            phoneDatabase.mostCommonOS();
+            Console.WriteLine(phoneDatabase.averageWeight());
 
-            
+            phoneDatabase.addPhone(newPhone);
+            Console.WriteLine(phoneDatabase.getPhone(1000));
+
+            phoneDatabase.diffReleasedYear();
+            phoneDatabase.phoneOneSensor();
+            phoneDatabase.mostLaunchYear();
             Console.ReadKey();
         }
-
-        static void 
     }
 }
