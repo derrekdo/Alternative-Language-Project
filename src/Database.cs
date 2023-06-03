@@ -10,7 +10,6 @@ namespace Alternative_Language_Project {
         private Dictionary<string, int> companyStats = new Dictionary<string, int>();
         private Dictionary<string, int> sensorsStats = new Dictionary<string, int>();
         private Queue<int> removedIndex = new Queue<int>();
-        private Dictionary<string, Dictionary<int, float>> oemWeights = new Dictionary<string, Dictionary<int, float>>();
         private Dictionary<string, string> diffAnnouncedReleased = new Dictionary<string, string>();
         private int oneSensor = 0;
         private Dictionary<int, int> launched2000 = new Dictionary<int, int>();
